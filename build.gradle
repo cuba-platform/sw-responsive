@@ -12,6 +12,8 @@ buildscript {
     }
     dependencies {
         classpath "com.haulmont.gradle:cuba-plugin:$cubaVersion"
+        // Bintray upload plugin
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
     }
 }
 
@@ -89,4 +91,30 @@ configure(webModule) {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.3.1'
+}
+
+subprojects {
+    apply plugin: 'com.jfrog.bintray'
+
+    bintray {
+        user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+        key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+
+        configurations = ['archives']
+
+        publish = true
+        override = false
+
+        pkg {
+            repo = 'libs'
+            name = 'sw-responsive'
+
+            userOrg = 'strangeway-org'
+
+            issueTrackerUrl = 'https://github.com/strangeway-org/sw-responsive/issues'
+            vcsUrl = 'https://github.com/strangeway-org/sw-responsive'
+            licenses = ["Apache-2.0"]
+            labels = ['cuba-platform', 'opensource']
+        }
+    }
 }
