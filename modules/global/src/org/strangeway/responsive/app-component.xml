@@ -5,6 +5,10 @@
             name="global">
         <artifact appJar="true"
                   name="sw-responsive-global"/>
+        <property name="cuba.persistenceConfig"
+                  value="+org/strangeway/responsive/persistence.xml"/>
+        <property name="cuba.metadataConfig"
+                  value="+org/strangeway/responsive/metadata.xml"/>
     </module>
     <module blocks="web"
             dependsOn="global"
@@ -13,5 +17,7 @@
                   name="sw-responsive-web"/>
         <property name="cuba.springContextConfig"
                   value="+org/strangeway/responsive/web-spring.xml"/>
+        <property name="cuba.web.componentsConfig"
+                  value="+org/strangeway/responsive/web-components.xml"/>
     </module>
 </app-component>
