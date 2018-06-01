@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<app-component xmlns="http://schemas.haulmont.com/cuba/app-component.xsd"
+               dependsOn="com.haulmont.cuba">
+    <module blocks="*"
+            name="global">
+        <artifact appJar="true"
+                  name="sw-responsive-global"/>
+    </module>
+    <module blocks="web"
+            dependsOn="global"
+            name="web">
+        <artifact appJar="true"
+                  name="sw-responsive-web"/>
+        <property name="cuba.springContextConfig"
+                  value="+org/strangeway/responsive/web-spring.xml"/>
+    </module>
+</app-component>

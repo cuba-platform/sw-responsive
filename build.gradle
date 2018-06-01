@@ -70,6 +70,13 @@ configure([globalModule, webModule]) {
 
 configure(globalModule) {
     task enhance(type: CubaEnhancing)
+
+    jar {
+        manifest {
+            attributes('App-Component-Id': cuba.artifact.group)
+            attributes('App-Component-Version': cuba.artifact.version + (cuba.artifact.isSnapshot ? '-SNAPSHOT' : ''))
+        }
+    }
 }
 
 configure(webModule) {
@@ -80,16 +87,6 @@ configure(webModule) {
     dependencies {
         provided(servletApi)
         compile(globalModule)
-    }
-    
-    task webArchive(type: Zip) {
-        from file("$buildDir/web")
-        from file('web')
-        classifier = 'web'
-    }
-
-    artifacts {
-        archives webArchive
     }
 }
 
