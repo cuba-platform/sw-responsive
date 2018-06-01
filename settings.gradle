@@ -1,0 +1,5 @@
+rootProject.name = 'sw-responsive'
+def modulePrefix = 'sw-responsive'
+include(":${modulePrefix}-global", ":${modulePrefix}-core", ":${modulePrefix}-web")
+project(":${modulePrefix}-global").projectDir = new File(settingsDir, 'modules/global')
+project(":${modulePrefix}-web").projectDir = new File(settingsDir, 'modules/web')

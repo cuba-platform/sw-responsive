@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2008-2018 StrangeWay.org.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<xs:schema targetNamespace="http://strangeway.org/xsd/responsive/sw-responsive.xsd"
+           xmlns:cuba="http://schemas.haulmont.com/cuba/window.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://strangeway.org/xsd/responsive/sw-responsive.xsd"
+           elementFormDefault="qualified">
+
+    <!-- StrangeWay.Org Responsive Layout XSD -->
+
+    <xs:simpleType name="contentAlignmentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LEFT"/>
+            <xs:enumeration value="CENTER"/>
+            <xs:enumeration value="RIGHT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="spacingSizeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SMALL"/>
+            <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="marginSizeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE"/>
+            <xs:enumeration value="SMALL"/>
+            <xs:enumeration value="NORMAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="containerType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FIXED"/>
+            <xs:enumeration value="FLUID"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="displaySizeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="XS"/>
+            <xs:enumeration value="SM"/>
+            <xs:enumeration value="MD"/>
+            <xs:enumeration value="LG"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="responsiveColumnType">
+        <xs:complexContent>
+            <xs:extension base="cuba:baseComponent">
+                <xs:sequence minOccurs="0">
+                    <xs:element name="content" minOccurs="0">
+                        <xs:complexType>
+                            <xs:group ref="cuba:layoutOrComponent"/>
+
+                            <xs:attribute name="alignment" type="contentAlignmentType"/>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:element name="display" minOccurs="0">
+                        <xs:complexType>
+                            <xs:attribute name="xs" type="xs:integer" use="required"/>
+                            <xs:attribute name="sm" type="xs:integer" use="required"/>
+                            <xs:attribute name="md" type="xs:integer" use="required"/>
+                            <xs:attribute name="lg" type="xs:integer" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:element name="visibility" minOccurs="0">
+                        <xs:complexType>
+                            <xs:attribute name="xs" type="xs:boolean" use="required"/>
+                            <xs:attribute name="sm" type="xs:boolean" use="required"/>
+                            <xs:attribute name="md" type="xs:boolean" use="required"/>
+                            <xs:attribute name="lg" type="xs:boolean" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:element name="expandRatio" minOccurs="0">
+                        <xs:complexType>
+                            <xs:attribute name="displaySize" type="displaySizeType" use="required"/>
+                            <xs:attribute name="width" type="xs:integer" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+
+                    <xs:element name="rule" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:attribute name="displaySize" type="displaySizeType"/>
+                            <xs:attribute name="width" type="xs:integer"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+
+                <xs:attribute name="offsetXS" type="xs:integer"/>
+                <xs:attribute name="offsetSM" type="xs:integer"/>
+                <xs:attribute name="offsetMD" type="xs:integer"/>
+                <xs:attribute name="offsetLG" type="xs:integer"/>
+
+                <xs:attribute name="expandRatioXS" type="xs:integer"/>
+                <xs:attribute name="expandRatioSM" type="xs:integer"/>
+                <xs:attribute name="expandRatioMD" type="xs:integer"/>
+                <xs:attribute name="expandRatioLG" type="xs:integer"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="responsiveRowType">
+        <xs:complexContent>
+            <xs:extension base="cuba:baseComponent">
+                <xs:sequence>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="column" type="responsiveColumnType"/>
+                    </xs:choice>
+                </xs:sequence>
+
+                <xs:attribute name="defaultComponentAlignment" type="cuba:align"/>
+                <xs:attribute name="spacing" type="xs:boolean"/>
+                <xs:attribute name="margin" type="xs:boolean"/>
+
+                <xs:attribute name="verticalSpacing" type="xs:boolean"/>
+                <xs:attribute name="horizontalSpacing" type="xs:boolean"/>
+
+                <xs:attribute name="marginSizeXS" type="marginSizeType"/>
+                <xs:attribute name="marginSizeSM" type="marginSizeType"/>
+                <xs:attribute name="marginSizeMD" type="marginSizeType"/>
+                <xs:attribute name="marginSizeLG" type="marginSizeType"/>
+
+                <xs:attribute name="spacingSize" type="spacingSizeType"/>
+                <xs:attribute name="verticalSpacingSize" type="spacingSizeType"/>
+                <xs:attribute name="horizontalSpacingSize" type="spacingSizeType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="responsiveLayout">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="cuba:baseComponent">
+                    <xs:sequence>
+                        <xs:choice minOccurs="0" maxOccurs="unbounded">
+                            <xs:element name="row" type="responsiveRowType"/>
+                        </xs:choice>
+                    </xs:sequence>
+
+                    <xs:attribute name="scrollable" type="xs:boolean"/>
+                    <xs:attribute name="containerType" type="containerType"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
