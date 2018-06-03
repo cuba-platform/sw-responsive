@@ -7,6 +7,9 @@ Responsive Layout for CUBA Platform
 
 Based on Responsive Layout Vaadin Add-on: https://github.com/JarekToro/responsive-layout
 
+<h1 align="center"><img src="https://github.com/strangeway-org/sw-responsive/blob/master/doc/sw-responsive.gif" alt="Demo" align="center">
+</h1>
+
 Demo project: https://github.com/strangeway-org/sw-responsive-demo
 
 ### Usage
