@@ -52,6 +52,7 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
             }
 
             ResponsiveLayout.Row row = factory.createComponent(ResponsiveLayout.Row.class);
+            loadId(row, rowElement);
             resultComponent.addRow(row);
 
             pendingRows.add(new PendingRow(row, rowElement));
@@ -63,7 +64,7 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
                 }
 
                 ResponsiveLayout.Column column = factory.createComponent(ResponsiveLayout.Column.class);
-
+                loadId(column, columnElement);
                 row.addColumn(column);
 
                 pendingColumns.add(new PendingColumn(column, columnElement));
