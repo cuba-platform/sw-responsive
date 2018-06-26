@@ -93,6 +93,8 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
         loadEnable(resultComponent, element);
 
         loadBoolean(element, "scrollable", resultComponent::setScrollable);
+        loadBoolean(element, "flexible", resultComponent::setFlexible);
+        loadBoolean(element, "spacing", resultComponent::setSpacing);
 
         String containerType = element.attributeValue("containerType");
         if (isNotEmpty(containerType)) {
@@ -131,6 +133,9 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
         loadBoolean(rowElement, "verticalSpacing", row::setVerticalSpacing);
         loadBoolean(rowElement, "horizontalSpacing", row::setHorizontalSpacing);
         loadBoolean(rowElement, "margin", row::setMargin);
+
+        loadBoolean(rowElement, "grow", row::setGrow);
+        loadBoolean(rowElement, "shrink", row::setShrink);
 
         loadMarginSize(row, rowElement, DisplaySize.XS, "marginSizeXS");
         loadMarginSize(row, rowElement, DisplaySize.SM, "marginSizeSM");

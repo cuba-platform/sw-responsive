@@ -28,6 +28,12 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
     void setScrollable(boolean scrollable);
     boolean isScrollable();
 
+    void setFlexible(boolean flexible);
+    boolean isFlexible();
+
+    void setSpacing(boolean spacing);
+    boolean isSpacing();
+
     default void addRow(Row row) {
         add(row);
     }
@@ -87,6 +93,9 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
 
         void setMargin(MarginSize marginSize, DisplaySize displaySize);
         void setMargin(boolean margin);
+
+        void setGrow(boolean grow);
+        void setShrink(boolean shrink);
     }
 
     interface Column extends Component.Container {
