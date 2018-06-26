@@ -133,6 +133,9 @@
                 <xs:attribute name="spacing" type="xs:boolean"/>
                 <xs:attribute name="margin" type="xs:boolean"/>
 
+                <xs:attribute name="grow" type="xs:boolean"/>
+                <xs:attribute name="shrink" type="xs:boolean"/>
+
                 <xs:attribute name="verticalSpacing" type="xs:boolean"/>
                 <xs:attribute name="horizontalSpacing" type="xs:boolean"/>
 
@@ -159,6 +162,9 @@
                     </xs:sequence>
 
                     <xs:attribute name="scrollable" type="xs:boolean"/>
+                    <xs:attribute name="flexible" type="xs:boolean"/>
+                    <xs:attribute name="spacing" type="xs:boolean"/>
+
                     <xs:attribute name="containerType" type="containerType"/>
                 </xs:extension>
             </xs:complexContent>

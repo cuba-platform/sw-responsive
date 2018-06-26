@@ -22,8 +22,14 @@ import org.strangeway.responsive.web.components.ResponsiveLayout;
 public class WebResponsiveLayout extends WebAbstractOrderedLayout<com.jarektoro.responsivelayout.ResponsiveLayout>
         implements ResponsiveLayout {
 
+    private static final String CSS_CONTAINER_FLEXIBLE = "flexible";
+    private static final String CSS_CONTAINER_SPACING = "spacing";
+
     protected ContainerType containerType = ContainerType.FLUID;
+
     protected boolean scrollable = false;
+    protected boolean flexible = false;
+    protected boolean spacing = false;
 
     public WebResponsiveLayout() {
         component = new com.jarektoro.responsivelayout.ResponsiveLayout();
@@ -51,5 +57,35 @@ public class WebResponsiveLayout extends WebAbstractOrderedLayout<com.jarektoro.
     @Override
     public boolean isScrollable() {
         return scrollable;
+    }
+
+    @Override
+    public void setFlexible(boolean flexible) {
+        if (flexible) {
+            component.addStyleName(CSS_CONTAINER_FLEXIBLE);
+        } else {
+            component.removeStyleName(CSS_CONTAINER_FLEXIBLE);
+        }
+        this.flexible = flexible;
+    }
+
+    @Override
+    public boolean isFlexible() {
+        return flexible;
+    }
+
+    @Override
+    public void setSpacing(boolean spacing) {
+        if (spacing) {
+            component.addStyleName(CSS_CONTAINER_SPACING);
+        } else {
+            component.removeStyleName(CSS_CONTAINER_SPACING);
+        }
+        this.spacing = spacing;
+    }
+
+    @Override
+    public boolean isSpacing() {
+        return spacing;
     }
 }

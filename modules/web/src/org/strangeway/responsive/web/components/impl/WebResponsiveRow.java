@@ -73,4 +73,14 @@ public class WebResponsiveRow extends WebAbstractOrderedLayout<ResponsiveRow>
     public void setMargin(boolean margin) {
         component.setMargin(margin);
     }
+
+    @Override
+    public void setGrow(boolean grow) {
+        component.setGrow(grow);
+    }
+
+    @Override
+    public void setShrink(boolean shrink) {
+        component.setShrink(shrink);
+    }
 }

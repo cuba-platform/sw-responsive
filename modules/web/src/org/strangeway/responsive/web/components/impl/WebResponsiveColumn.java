@@ -52,6 +52,8 @@ public class WebResponsiveColumn extends WebAbstractComponent<ResponsiveColumn>
 
         this.childComponent.setParent(this);
 
+        // todo set Frame for child component
+
         component.setComponent(childComponent.unwrap(com.vaadin.ui.Component.class));
     }
 
