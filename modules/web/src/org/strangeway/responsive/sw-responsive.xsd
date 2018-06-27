@@ -139,6 +139,11 @@
                 <xs:attribute name="verticalSpacing" type="xs:boolean"/>
                 <xs:attribute name="horizontalSpacing" type="xs:boolean"/>
 
+                <xs:attribute name="minWidth" type="xs:string"/>
+                <xs:attribute name="maxWidth" type="xs:string"/>
+                <xs:attribute name="minHeight" type="xs:string"/>
+                <xs:attribute name="maxHeight" type="xs:string"/>
+
                 <xs:attribute name="marginSizeXS" type="marginSizeType"/>
                 <xs:attribute name="marginSizeSM" type="marginSizeType"/>
                 <xs:attribute name="marginSizeMD" type="marginSizeType"/>

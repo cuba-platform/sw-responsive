@@ -137,6 +137,12 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
         loadBoolean(rowElement, "grow", row::setGrow);
         loadBoolean(rowElement, "shrink", row::setShrink);
 
+        loadString(rowElement, "minWidth", row::setMinWidth);
+        loadString(rowElement, "maxWidth", row::setMaxWidth);
+
+        loadString(rowElement, "minHeight", row::setMinHeight);
+        loadString(rowElement, "maxHeight", row::setMaxHeight);
+
         loadMarginSize(row, rowElement, DisplaySize.XS, "marginSizeXS");
         loadMarginSize(row, rowElement, DisplaySize.SM, "marginSizeSM");
         loadMarginSize(row, rowElement, DisplaySize.MD, "marginSizeMD");
@@ -288,6 +294,13 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
         String value = element.attributeValue(attribute);
         if (isNotEmpty(value)) {
             consumer.accept(Boolean.valueOf(value));
+        }
+    }
+
+    public static void loadString(Element element, String attribute, Consumer<String> consumer) {
+        String value = element.attributeValue(attribute);
+        if (isNotEmpty(value)) {
+            consumer.accept(value);
         }
     }
 }

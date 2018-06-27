@@ -21,9 +21,13 @@ import com.haulmont.cuba.web.gui.components.WebWrapperUtils;
 import com.jarektoro.responsivelayout.ResponsiveColumn;
 import com.jarektoro.responsivelayout.ResponsiveRow;
 import org.strangeway.responsive.web.components.ResponsiveLayout;
+import org.strangeway.responsive.web.components.impl.cssextension.CustomCssAttributesExtension;
 
 public class WebResponsiveRow extends WebAbstractOrderedLayout<ResponsiveRow>
         implements ResponsiveLayout.Row {
+
+    public CustomCssAttributesExtension cssExtension;
+
     public WebResponsiveRow() {
         component = new com.jarektoro.responsivelayout.ResponsiveRow();
     }
@@ -82,5 +86,52 @@ public class WebResponsiveRow extends WebAbstractOrderedLayout<ResponsiveRow>
     @Override
     public void setShrink(boolean shrink) {
         component.setShrink(shrink);
+    }
+
+    @Override
+    public void setMinHeight(String minHeight) {
+        getCssExtension().set("minHeight", minHeight);
+    }
+
+    @Override
+    public String getMinHeight() {
+        return getCssExtension().get("minHeight");
+    }
+
+    @Override
+    public void setMaxHeight(String maxHeight) {
+        getCssExtension().set("maxHeight", maxHeight);
+    }
+
+    @Override
+    public String getMaxHeight() {
+        return getCssExtension().get("maxHeight");
+    }
+
+    @Override
+    public void setMinWidth(String minWidth) {
+        getCssExtension().set("minWidth", minWidth);
+    }
+
+    @Override
+    public String getMinWidth() {
+        return getCssExtension().get("minWidth");
+    }
+
+    @Override
+    public void setMaxWidth(String maxWidth) {
+        getCssExtension().set("maxWidth", maxWidth);
+    }
+
+    @Override
+    public String getMaxWidth() {
+        return getCssExtension().get("maxWidth");
+    }
+
+    protected CustomCssAttributesExtension getCssExtension() {
+        if (cssExtension == null) {
+            this.cssExtension = new CustomCssAttributesExtension(component);
+        }
+        return cssExtension;
     }
 }

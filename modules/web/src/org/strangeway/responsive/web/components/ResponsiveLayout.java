@@ -64,7 +64,7 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
         NORMAL, SMALL
     }
 
-    interface Row extends Component.OrderedContainer {
+    interface Row extends Component.OrderedContainer, HasMinMaxDimensions {
         String NAME = "c10m_responsiveRow";
 
         default void addColumn(Column column) {
