@@ -22,8 +22,8 @@ import org.strangeway.responsive.web.components.ResponsiveLayout;
 public class WebResponsiveLayout extends WebAbstractOrderedLayout<com.jarektoro.responsivelayout.ResponsiveLayout>
         implements ResponsiveLayout {
 
-    private static final String CSS_CONTAINER_FLEXIBLE = "flexible";
-    private static final String CSS_CONTAINER_SPACING = "spacing";
+    protected static final String CSS_CONTAINER_FLEXIBLE = "flexible";
+    protected static final String CSS_CONTAINER_SPACING = "spacing";
 
     protected ContainerType containerType = ContainerType.FLUID;
 
