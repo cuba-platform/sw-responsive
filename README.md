@@ -20,7 +20,7 @@ Select a version of the add-on which is compatible with the platform version use
 
 Add custom application component to your project (change the version part if needed):
 ```
-org.strangeway.responsive:sw-responsive-global:1.1.1
+org.strangeway.responsive:sw-responsive-global:1.1.2
 ```
 
 ### Quick Start
