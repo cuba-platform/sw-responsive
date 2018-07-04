@@ -79,6 +79,8 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
 
     @Override
     public void loadComponent() {
+        assignFrame(resultComponent);
+
         loadAlign(resultComponent, element);
         loadCaption(resultComponent, element);
         loadDescription(resultComponent, element);
@@ -122,6 +124,8 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
     }
 
     protected void loadRow(ResponsiveLayout.Row row, Element rowElement) {
+        assignFrame(row);
+
         loadBasicAttributes(row, rowElement);
 
         String defaultComponentAlignment = rowElement.attributeValue("defaultComponentAlignment");
@@ -173,6 +177,8 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
     }
 
     protected void loadColumn(ResponsiveLayout.Column column, Element columnElement) {
+        assignFrame(column);
+
         loadBasicAttributes(column, columnElement);
 
         // content attributes
