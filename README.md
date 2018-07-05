@@ -25,9 +25,7 @@ org.strangeway.responsive:sw-responsive-global:1.1.2
 
 ### Quick Start
 
-Let's say you want to implement responsive dashboard in a screen. Something like this:
-
-TODO add image
+Let's say you want to implement responsive dashboard in a screen.
 
 First of all, add xmlns `http://strangeway.org/xsd/responsive/sw-responsive.xsd` reference to the screen XML:
 ```xml
