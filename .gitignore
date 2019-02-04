@@ -3,6 +3,8 @@
 *.ipr
 *.iml
 *.iws
+.idea/
+.shelf/
 build/*
 deploy/*
 modules/*/build/*

@@ -19,7 +19,7 @@ package org.strangeway.responsive.web.components.impl;
 import com.haulmont.cuba.gui.ComponentsHelper;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.web.gui.components.WebAbstractComponent;
-import com.haulmont.cuba.web.toolkit.ui.CubaPlaceHolder;
+import com.haulmont.cuba.web.widgets.CubaPlaceHolder;
 import com.jarektoro.responsivelayout.ResponsiveColumn;
 import org.strangeway.responsive.web.components.ResponsiveLayout;
 import org.strangeway.responsive.web.components.ResponsiveLayout.DisplaySize;
@@ -28,6 +28,7 @@ import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 import static com.haulmont.bali.util.Preconditions.checkNotNullArgument;
 
@@ -96,6 +97,11 @@ public class WebResponsiveColumn extends WebAbstractComponent<ResponsiveColumn>
         }
 
         return Collections.emptyList();
+    }
+
+    @Override
+    public Stream<Component> getOwnComponentsStream() {
+        return Stream.of(childComponent);
     }
 
     @Override

@@ -6,8 +6,6 @@ import com.vaadin.ui.Component;
 /**
  * Created by jarektoro on 11/22/16.
  */
-
-
 public class VisibilityCSSAdapter {
 
 

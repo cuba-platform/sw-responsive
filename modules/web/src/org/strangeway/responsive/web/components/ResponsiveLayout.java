@@ -17,8 +17,10 @@
 package org.strangeway.responsive.web.components;
 
 import com.haulmont.cuba.gui.components.Component;
+import com.haulmont.cuba.gui.components.ComponentContainer;
+import com.haulmont.cuba.gui.components.OrderedContainer;
 
-public interface ResponsiveLayout extends Component.OrderedContainer, Component.HasCaption, Component.HasIcon,
+public interface ResponsiveLayout extends OrderedContainer, Component.HasCaption, Component.HasIcon,
         Component.BelongToFrame {
 
     String NAME = "c10m_responsiveLayout";
@@ -37,6 +39,10 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
 
     default void addRow(Row row) {
         add(row);
+    }
+
+    default void addRows(Row... rows) {
+        add(rows);
     }
 
     enum DisplaySize {
@@ -65,7 +71,7 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
         NORMAL, SMALL
     }
 
-    interface Row extends Component.OrderedContainer, HasMinMaxDimensions, Component.BelongToFrame {
+    interface Row extends OrderedContainer, HasMinMaxDimensions, Component.BelongToFrame {
         String NAME = "c10m_responsiveRow";
 
         default void addColumn(Column column) {
@@ -99,7 +105,7 @@ public interface ResponsiveLayout extends Component.OrderedContainer, Component.
         void setShrink(boolean shrink);
     }
 
-    interface Column extends Component.Container, Component.BelongToFrame {
+    interface Column extends ComponentContainer, Component.BelongToFrame {
         String NAME = "c10m_responsiveColumn";
 
         void setContent(Component component);

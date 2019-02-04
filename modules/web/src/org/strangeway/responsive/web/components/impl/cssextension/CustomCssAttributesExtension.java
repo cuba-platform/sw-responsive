@@ -3,7 +3,6 @@ package org.strangeway.responsive.web.components.impl.cssextension;
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.server.AbstractClientConnector;
 import com.vaadin.server.AbstractJavaScriptExtension;
-import com.vaadin.shared.communication.SharedState;
 
 @JavaScript("vaadin://cssextension/custom-css-attributes.js")
 public class CustomCssAttributesExtension extends AbstractJavaScriptExtension {

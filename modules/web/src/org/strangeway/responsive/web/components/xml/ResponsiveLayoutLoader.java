@@ -16,7 +16,6 @@
 
 package org.strangeway.responsive.web.components.xml;
 
-import com.haulmont.bali.util.Dom4j;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.Component.Alignment;
 import com.haulmont.cuba.gui.xml.layout.loaders.ContainerLoader;
@@ -34,7 +33,7 @@ import java.util.function.Consumer;
 
 import static java.lang.Boolean.parseBoolean;
 import static java.lang.Integer.parseInt;
-import static org.apache.commons.lang.StringUtils.isNotEmpty;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
     protected List<PendingRow> pendingRows = Collections.emptyList();
@@ -42,28 +41,28 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
 
     @Override
     public void createComponent() {
-        resultComponent = factory.createComponent(ResponsiveLayout.class);
+        resultComponent = factory.create(ResponsiveLayout.class);
         loadId(resultComponent, element);
 
-        List<Element> rowElements = Dom4j.elements(element, "row");
+        List<Element> rowElements = element.elements("row");
         for (Element rowElement : rowElements) {
             if (pendingRows.isEmpty()) {
                 pendingRows = new ArrayList<>();
             }
 
-            ResponsiveLayout.Row row = factory.createComponent(ResponsiveLayout.Row.class);
+            ResponsiveLayout.Row row = factory.create(ResponsiveLayout.Row.class);
             loadId(row, rowElement);
             resultComponent.addRow(row);
 
             pendingRows.add(new PendingRow(row, rowElement));
 
-            List<Element> colElements = Dom4j.elements(rowElement, "column");
+            List<Element> colElements = rowElement.elements("column");
             for (Element columnElement : colElements) {
                 if (pendingColumns.isEmpty()) {
                     pendingColumns = new ArrayList<>();
                 }
 
-                ResponsiveLayout.Column column = factory.createComponent(ResponsiveLayout.Column.class);
+                ResponsiveLayout.Column column = factory.create(ResponsiveLayout.Column.class);
                 loadId(column, columnElement);
                 row.addColumn(column);
 
@@ -212,7 +211,7 @@ public class ResponsiveLayoutLoader extends ContainerLoader<ResponsiveLayout> {
             column.setVisibilityRules(xs, sm, md, lg);
         }
 
-        List<Element> ruleElements = Dom4j.elements(columnElement, "rule");
+        List<Element> ruleElements = columnElement.elements("rule");
         for (Element ruleElement : ruleElements) {
             DisplaySize displaySize = DisplaySize.valueOf(ruleElement.attributeValue("displaySize"));
             int width = parseInt(ruleElement.attributeValue("width"));

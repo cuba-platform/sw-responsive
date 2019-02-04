@@ -1,6 +1,7 @@
 package com.jarektoro.responsivelayout;
 
 import com.jarektoro.responsivelayout.Styleable.StyleableComponent;
+import com.vaadin.shared.Registration;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.SingleComponentContainer;
@@ -280,8 +281,8 @@ public class ResponsiveColumn extends StyleableComponent implements SingleCompon
 	}
 
 	@Override
-	public void addComponentAttachListener(ComponentAttachListener listener) {
-		addListener(ComponentAttachEvent.class, listener,
+	public Registration addComponentAttachListener(ComponentAttachListener listener) {
+		return addListener(ComponentAttachEvent.class, listener,
 				ComponentAttachListener.attachMethod);
 	}
 
@@ -291,8 +292,8 @@ public class ResponsiveColumn extends StyleableComponent implements SingleCompon
 	}
 
 	@Override
-	public void addComponentDetachListener(ComponentDetachListener listener) {
-		addListener(ComponentDetachEvent.class, listener,
+	public Registration addComponentDetachListener(ComponentDetachListener listener) {
+		return addListener(ComponentDetachEvent.class, listener,
 				ComponentDetachListener.detachMethod);
 	}
 

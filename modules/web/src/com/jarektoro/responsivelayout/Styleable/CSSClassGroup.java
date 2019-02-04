@@ -6,7 +6,6 @@ import java.util.Set;
 /**
  * Created by jarektoro on 11/22/16.
  */
-
 public class CSSClassGroup {
 
 	public final Set<String> classes;
