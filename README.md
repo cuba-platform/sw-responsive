@@ -3,8 +3,8 @@
 Responsive Layout for CUBA Platform
 
 <a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat" alt="license" title=""></a>
-[![Download](https://api.bintray.com/packages/strangeway-org/libs/sw-responsive/images/download.svg) ](https://bintray.com/strangeway-org/libs/sw-responsive/_latestVersion)
-[![Build Status](https://travis-ci.org/strangeway-org/sw-responsive.svg?branch=master)](https://travis-ci.org/strangeway-org/sw-responsive)
+[![Download](https://api.bintray.com/packages/cuba-platform/main/sw-responsive/images/download.svg) ](https://bintray.com/cuba-platform/main/sw-responsive/_latestVersion)
+[![Build Status](https://travis-ci.org/cuba-platform/sw-responsive.svg?branch=master)](https://travis-ci.org/strangeway-org/sw-responsive)
 
 Based on Responsive Layout Vaadin Add-on: https://github.com/JarekToro/responsive-layout
 
