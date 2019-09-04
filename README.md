@@ -16,6 +16,7 @@ Select a version of the add-on which is compatible with the platform version use
 
 | Platform Version| Add-on Version|
 |:----------------|:--------------|
+| 7.1.0+          | 1.4+          |
 | 7.0.0+          | 1.3+          |
 | 6.10.0+         | 1.2+          |
 | 6.9.0+          | 1.1+          |
@@ -23,7 +24,7 @@ Select a version of the add-on which is compatible with the platform version use
 
 Add custom application component to your project (change the version part if needed):
 ```
-org.strangeway.responsive:sw-responsive-global:1.3.0
+org.strangeway.responsive:sw-responsive-global:1.4.0
 ```
 
 ### Quick Start

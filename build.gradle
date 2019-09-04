@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '7.0.0'
+    ext.cubaVersion = '7.1.0'
     repositories {
         jcenter()
         maven {
@@ -26,7 +26,7 @@ apply(plugin: 'cuba')
 cuba {
     artifact {
         group = 'org.strangeway.responsive'
-        version = '1.3'
+        version = '1.4'
         isSnapshot = true
     }
     tomcat {
@@ -41,7 +41,7 @@ dependencies {
     appComponent("com.haulmont.cuba:cuba-global:$cubaVersion")
 }
 
-def hsql = 'org.hsqldb:hsqldb:2.2.9'
+def hsql = 'org.hsqldb:hsqldb:2.4.1'
 
 configure([globalModule, webModule]) {
     apply(plugin: 'java')
