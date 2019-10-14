@@ -400,7 +400,7 @@ public class ResponsiveRow extends StyleableLayout {
         NORMAL, SMALL
     }
 
-    public class NotResponsiveColumnException extends Exception {
+    public static class NotResponsiveColumnException extends Exception {
 
         private static final long serialVersionUID = -461250842842947577L;
 

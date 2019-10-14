@@ -35,7 +35,7 @@ public class ResponsiveColumn extends StyleableComponent implements SingleCompon
     private Set<Rule> rules;
     private CssLayout root;
 
-    public class Rule {
+    public static class Rule {
         public ResponsiveLayout.DisplaySize displaySize;
         public int width;
         public boolean isOffset = false;
