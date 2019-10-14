@@ -69,45 +69,29 @@ public class VisibilityCSSAdapter {
         if (displaySize == ResponsiveLayout.DisplaySize.XS) {
             for (String clazz : VisibilityCSSAdapter.xsClassGroup.classes) {
                 if (this.component.getStyleName().contains(clazz)) {
-                    if (clazz.contains("hidden")) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return !clazz.contains("hidden");
                 }
             }
         } else if (displaySize == ResponsiveLayout.DisplaySize.SM) {
             for (String clazz : VisibilityCSSAdapter.smClassGroup.classes) {
                 if (this.component.getStyleName().contains(clazz)) {
-                    if (clazz.contains("hidden")) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return !clazz.contains("hidden");
                 }
             }
         } else if (displaySize == ResponsiveLayout.DisplaySize.MD) {
             for (String clazz : VisibilityCSSAdapter.mdClassGroup.classes) {
                 if (this.component.getStyleName().contains(clazz)) {
-                    if (clazz.contains("hidden")) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return !clazz.contains("hidden");
                 }
             }
         } else if (displaySize == ResponsiveLayout.DisplaySize.LG) {
             for (String clazz : VisibilityCSSAdapter.lgClassGroup.classes) {
                 if (this.component.getStyleName().contains(clazz)) {
-                    if (clazz.contains("hidden")) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return !clazz.contains("hidden");
                 }
             }
         }
-        
+
         return true;
     }
 
@@ -117,19 +101,19 @@ public class VisibilityCSSAdapter {
                 this.component.removeStyleName(clazz);
             }
         }
-        
+
         if (displaySize == ResponsiveLayout.DisplaySize.SM) {
             for (String clazz : VisibilityCSSAdapter.smClassGroup.classes) {
                 this.component.removeStyleName(clazz);
             }
         }
-        
+
         if (displaySize == ResponsiveLayout.DisplaySize.MD) {
             for (String clazz : VisibilityCSSAdapter.mdClassGroup.classes) {
                 this.component.removeStyleName(clazz);
             }
         }
-        
+
         if (displaySize == ResponsiveLayout.DisplaySize.LG) {
             for (String clazz : VisibilityCSSAdapter.lgClassGroup.classes) {
                 this.component.removeStyleName(clazz);

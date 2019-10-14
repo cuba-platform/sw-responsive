@@ -8,15 +8,15 @@ import java.util.Set;
  */
 public class CSSClassGroup {
 
-	public final Set<String> classes;
+    public final Set<String> classes;
 
-	public CSSClassGroup(String... classes) {
-		HashSet<String> hashSet = new HashSet<>();
-		for (String clazz : classes) {
-			hashSet.add(clazz);
-		}
+    public CSSClassGroup(String... classes) {
+        HashSet<String> hashSet = new HashSet<>();
+        for (String clazz : classes) {
+            hashSet.add(clazz);
+        }
 
-		this.classes = hashSet;
-	}
+        this.classes = hashSet;
+    }
 
 }

@@ -8,9 +8,9 @@ import com.vaadin.ui.CssLayout;
  */
 public class StyleableLayout extends CssLayout {
 
-	private static final long serialVersionUID = -7409720799484798627L;
-	
-	private final VisibilityCSSAdapter visibilityCSSAdapter;
+    private static final long serialVersionUID = -7409720799484798627L;
+
+    private final VisibilityCSSAdapter visibilityCSSAdapter;
 
     public StyleableLayout() {
         visibilityCSSAdapter = new VisibilityCSSAdapter(this);
