@@ -1,4 +1,4 @@
-# sw-responsive
+# SW-responsive
 
 Responsive Layout for CUBA Platform
 
@@ -11,23 +11,52 @@ Based on Responsive Layout Vaadin Add-on: https://github.com/JarekToro/responsiv
 <h1 align="center"><img src="https://github.com/strangeway-org/sw-responsive/blob/master/doc/sw-responsive.gif" alt="Demo" align="center">
 </h1>
 
-### Usage
-Select a version of the add-on which is compatible with the platform version used in your project:
+## Installation
 
-| Platform Version| Add-on Version|
-|:----------------|:--------------|
-| 7.1.0+          | 1.4+          |
-| 7.0.0+          | 1.3+          |
-| 6.10.0+         | 1.2+          |
-| 6.9.0+          | 1.1+          |
-| 6.8.5+          | 1.0+          |
+The add-on can be added to your project in one of the ways described below. Installation from the Marketplace is the simplest way. The last version of the add-on compatible with the used version of the platform will be installed.
+Also, you can install the add-on by coordinates choosing the required version of the add-on from the table.
 
-Add custom application component to your project (change the version part if needed):
-```
-org.strangeway.responsive:sw-responsive-global:1.4.0
-```
+In case you want to install the add-on by manual editing or by building from sources see the complete add-ons installation guide in [CUBA Platform documentation](https://doc.cuba-platform.com/manual-latest/manual.html#app_components_usage).
 
-### Quick Start
+### From the Marketplace
+
+1. Open your application in CUBA Studio. Check the latest version of CUBA Studio on the [CUBA Platform site](https://www.cuba-platform.com/download/previous-studio/).
+2. Go to *CUBA -> Marketplace* in the main menu.
+
+ ![marketplace](doc/marketplace.png)
+
+3. Find the *SW-responsive* add-on there.
+
+ ![addons](doc/addons.png)
+
+4. Click *Install* and apply the changes.
+The add-on corresponding to the used platform version will be installed.
+
+### By Coordinates
+
+1. Open your application in CUBA Studio. Check the latest version of CUBA Studio on the [CUBA Platform site](https://www.cuba-platform.com/download/previous-studio/).
+2. Go to *CUBA -> Marketplace* in the main menu.
+3. Click the icon in the upper-right corner.
+
+ ![by-coordinates](doc/by-coordinates.png)
+
+4. Paste the add-on coordinates in the corresponding field as follows:
+
+ `org.strangeway.responsive:sw-responsive-global:<add-on version>`
+
+ where `<add-on version>` is compatible with the used version of the CUBA platform.
+
+ | Platform Version | Add-on Version |
+|------------------|----------------|
+| 7.1.x          | 1.4.0          |
+| 7.0.x          | 1.3.0          |
+| 6.10.x         | 1.2.0          |
+| 6.9.x          | 1.1.0          |
+| 6.8.x          | 1.0.0          |
+
+5. Click *Install* and apply the changes. The add-on will be installed to your project.
+
+## Quick Start
 
 Let's say you want to implement responsive dashboard in a screen.
 
@@ -56,10 +85,10 @@ The main UI component of the app component is `ResponsiveLayout`. Let's define o
 ```xml
 <swr:responsiveLayout width="100%">
     <swr:row>
-        
+
     </swr:row>
     <swr:row>
-        
+
     </swr:row>
 </swr:responsiveLayout>
 ```
@@ -83,7 +112,7 @@ Each row may contain one or more columns:
     </swr:row>
     <swr:row>
         <swr:column>
-                        
+
         </swr:column>
     </swr:row>
 </swr:responsiveLayout>
@@ -137,5 +166,5 @@ See demo project: https://github.com/strangeway-org/sw-responsive-demo
 
 ### Read more
 
-See also the original docs on Grid System from Vaadin Add-on: 
+See also the original docs on Grid System from Vaadin Add-on:
 https://github.com/JarekToro/responsive-layout/wiki/The-Grid-System
