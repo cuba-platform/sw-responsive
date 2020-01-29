@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '7.1.0'
+    ext.cubaVersion = rootProject.hasProperty('cubaVersion') ? rootProject['cubaVersion'] : '7.2-SNAPSHOT'
     repositories {
         mavenLocal()
 
@@ -43,7 +43,7 @@ apply(plugin: 'addon-gradle-plugin')
 cuba {
     artifact {
         group = 'org.strangeway.responsive'
-        version = '1.4'
+        version = '1.5'
         isSnapshot = true
     }
     tomcat {
